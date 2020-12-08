@@ -114,22 +114,24 @@ let steps = [
 
 class InputForm extends Component {
     finishButtonClick(state) {
+        // this.props.addItems(state)
         // console.log('daf', state);
     }
 
     componentDidMount() {
-        console.log(" state ", this.props.items)
-        this.props.test("login")
+        // console.log(" state ", this.props.items)
+        // this.props.test("login")
+
     }
 
-    goToListItems=()=>{
-        console.log(" e ")
+    goToListItems = () => {
+        // console.log(" e ")
         this.props.history.push('/items')
     }
 
     render() {
         return (
-            <div  className='flex-column align-middle' style={{ display:'flex',marginTop: "15px"}}>
+            <div className='flex-column align-middle' style={{display: 'flex', marginTop: "15px"}}>
                 <button className='btn-secondary' onClick={event => this.goToListItems(event)}>List Items</button>
                 <Row>
                     <Col xs={12} md={6} className="mr-auto ml-auto">
@@ -143,9 +145,7 @@ class InputForm extends Component {
                             validate
                             color="primary"
                             finishButtonClick={this.finishButtonClick}
-                            onStepChange={() => {
-                                console.log("log")
-                            }}
+
                         />
                     </Col>
                 </Row>
@@ -161,7 +161,7 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        test: (data) => dispatch(actions.addItemStart(data))
+        addItems: (data) => dispatch(actions.addItemStart(data)),
     }
 }
 
